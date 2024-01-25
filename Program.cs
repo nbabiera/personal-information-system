@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 
 namespace personal_information_system
 {
@@ -16,13 +17,14 @@ namespace personal_information_system
 
             Console.WriteLine("Welcome to Your Personal Information System \n");
 
+            // reading of inputs from user
             Console.Write("Please enter your name:");
             name = Console.ReadLine();
             Console.Write("Please enter your age:");
-            while(!int.TryParse(Console.ReadLine(), out age))
+            while (!int.TryParse(Console.ReadLine(), out age) || age < 0)
             {
                 Console.WriteLine("Invalid input, please enter a number");
-                 Console.Write("Please enter your age:");
+                Console.Write("Please enter your age:");
             }
             Console.Write("Please enter your height in meters:");
             while (!double.TryParse(Console.ReadLine(), out height))
@@ -31,6 +33,7 @@ namespace personal_information_system
                 Console.Write("Please enter your height in meters:");
             }
 
+            //Conversion part of the code
             doubleAge = Convert.ToDouble(age);
             roundedHeight = Convert.ToInt32(height);
 

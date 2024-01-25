@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace personal_information_system
 {
@@ -38,6 +39,8 @@ namespace personal_information_system
             roundedHeight = Convert.ToInt32(height);
 
             Console.WriteLine("\n------------------------\n\nName:{0}\nage:{1}\nheight:{2}", name, doubleAge, roundedHeight);
+
+            //age checking
             Console.WriteLine("Age Check");
             if (age >= ageVerify)
             {
@@ -48,6 +51,7 @@ namespace personal_information_system
                 Console.WriteLine("You are still a minor\n");
             }
 
+            //age legal drinking verifications
             Console.WriteLine("Legal Drinking Age Verification:");
             if (age >= LEGAL_DRINKING_AGE)
             {
@@ -58,6 +62,7 @@ namespace personal_information_system
                 Console.WriteLine("Sorry, you are underage for drinking.\n");
             }
 
+            //display of information
             Console.WriteLine("Personal Details Presentation:\nYour Personal Information: {0}, {1} years old, {2} meter/s tall", name, doubleAge, roundedHeight);
             Console.WriteLine("\n\n------------------------\nThank you for using your Personal Information System!\n");
 
